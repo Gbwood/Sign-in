@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace LoginAssigment
 {
-    public partial class LoginUx : Form
+    public partial class LoginForm : Form
     {
         public int count = 3;
         public string pass = "";
-        public LoginUx()
+        public LoginForm()
         {
             InitializeComponent();
         }

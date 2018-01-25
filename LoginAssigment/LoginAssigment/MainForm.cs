@@ -16,5 +16,11 @@ namespace LoginAssigment
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            LoginForm lf = new LoginForm();
+            lf.Close();
+        }
     }
 }

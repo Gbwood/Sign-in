@@ -16,7 +16,7 @@ namespace LoginAssigment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginUx());
+            Application.Run(new LoginForm());
         }
     }
 }

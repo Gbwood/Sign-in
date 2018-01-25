@@ -14,7 +14,7 @@ namespace LoginAssigment
     {
         public int count = 3;
         public string pass = "";
-        public LoginForm()
+        public LoginUx()
         {
             InitializeComponent();
         }
@@ -36,13 +36,37 @@ namespace LoginAssigment
             else
             {
                 MessageBox.Show("Your account has been locked for 2 hours.");
-                Close();
+                UserText.Enabled = false;
+                PassText.Enabled = false;
+                label1.Text = "Your account has been locked, it will be available in 7200 seconds";
+                label1.Visible = true;
+                LoginBtn.Enabled = false;
+                timer1.Enabled = true;
             }
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void LoginUx_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            count++;
+            label1.Text = "Your account has been locked, it will be available in " + (7200 - count) + " seconds";
+            if (count >= 7200)
+            {
+                timer1.Enabled = false;
+                UserText.Enabled = true;
+                PassText.Enabled = true;
+                LoginBtn.Enabled = true;
+            }
+
         }
     }
 }

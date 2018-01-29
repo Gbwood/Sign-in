@@ -14,7 +14,7 @@ namespace LoginAssigment
     {
         public int count = 3;
         public string pass = "";
-        public LoginUx()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -55,7 +55,7 @@ namespace LoginAssigment
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             count++;
             label1.Text = "Your account has been locked, it will be available in " + (7200 - count) + " seconds";

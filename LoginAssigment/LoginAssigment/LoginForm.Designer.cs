@@ -34,9 +34,9 @@
             this.UserLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.UserText = new System.Windows.Forms.TextBox();
-            this.PassText = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.PassText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // LoginBtn
@@ -88,21 +88,21 @@
             this.UserText.Size = new System.Drawing.Size(149, 22);
             this.UserText.TabIndex = 4;
             // 
-            // PassText
-            // 
-            this.PassText.Location = new System.Drawing.Point(97, 44);
-            this.PassText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PassText.Name = "PassText";
-            this.PassText.PasswordChar = '*';
-            this.PassText.Size = new System.Drawing.Size(149, 22);
-            this.PassText.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
+            // 
+            // PassText
+            // 
+            this.PassText.Location = new System.Drawing.Point(97, 44);
+            this.PassText.Margin = new System.Windows.Forms.Padding(4);
+            this.PassText.Name = "PassText";
+            this.PassText.PasswordChar = '*';
+            this.PassText.Size = new System.Drawing.Size(149, 22);
+            this.PassText.TabIndex = 5;
             // 
             // LoginForm
             // 
@@ -115,7 +115,7 @@
             this.Controls.Add(this.UserLbl);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.LoginBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginUx_Load);
@@ -131,9 +131,9 @@
         private System.Windows.Forms.Label UserLbl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox UserText;
-        private System.Windows.Forms.TextBox PassText;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox PassText;
     }
 }
 

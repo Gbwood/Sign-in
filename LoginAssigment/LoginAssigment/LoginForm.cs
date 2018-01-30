@@ -7,28 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LoginAssigment
 {
     public partial class LoginForm : Form
     {
         public int count = 3;
+        public string user = "";
         public string pass = "";
+        public bool LogSuccess = false;
         public LoginForm()
         {
             InitializeComponent();
+            
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            if(UserText.Text == "user" && PassText.Text == "pass")
+            SqlConnection cn = new SqlConnection("Data Source=10.135.85.168;Initial Catalog=GROUP6;Persist Security Info=True;User ID=group6;Password=Grp6313s");
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("Select * from Table_Login where User_Name = '" + UserText.Text + "' and Password = '" + PassText.Text + "'",cn);
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+            int cont = 0;
+            while (dr.Read())
+            {
+                cont += 1;
+            }
+            if(cont == 1)
             {
                 this.Hide();
                 MessageBox.Show("You have been authorized to proceed.");
                 MainForm mf = new MainForm();
                 mf.Show();
             }
-            else if(count != 1)
+            else if(count > 1)
             {
                 count--;
                 MessageBox.Show("You have " + count + " more tries before your account is locked for 2 hours.");

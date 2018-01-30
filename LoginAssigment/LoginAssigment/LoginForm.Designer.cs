@@ -34,14 +34,15 @@
             this.UserLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.UserText = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.PassText = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LoginBtn
             // 
-            this.LoginBtn.Location = new System.Drawing.Point(255, 6);
+            this.LoginBtn.Location = new System.Drawing.Point(335, 4);
             this.LoginBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(100, 27);
@@ -52,7 +53,7 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(255, 42);
+            this.CancelBtn.Location = new System.Drawing.Point(335, 42);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(100, 27);
@@ -85,8 +86,14 @@
             this.UserText.Location = new System.Drawing.Point(95, 6);
             this.UserText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UserText.Name = "UserText";
-            this.UserText.Size = new System.Drawing.Size(149, 22);
+            this.UserText.Size = new System.Drawing.Size(219, 22);
             this.UserText.TabIndex = 4;
+            this.UserText.TextChanged += new System.EventHandler(this.UserText_TextChanged);
+            // 
+            // Timer1
+            // 
+            this.Timer1.Interval = 1000;
+            this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
             // 
             // label1
             // 
@@ -97,18 +104,29 @@
             // 
             // PassText
             // 
-            this.PassText.Location = new System.Drawing.Point(97, 44);
+            this.PassText.Location = new System.Drawing.Point(95, 44);
             this.PassText.Margin = new System.Windows.Forms.Padding(4);
             this.PassText.Name = "PassText";
             this.PassText.PasswordChar = '*';
-            this.PassText.Size = new System.Drawing.Size(149, 22);
+            this.PassText.Size = new System.Drawing.Size(219, 22);
             this.PassText.TabIndex = 5;
+            this.PassText.TextChanged += new System.EventHandler(this.PassText_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Welcome User!";
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 84);
+            this.ClientSize = new System.Drawing.Size(447, 113);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.PassText);
             this.Controls.Add(this.UserText);
             this.Controls.Add(this.label2);
@@ -118,7 +136,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.LoginUx_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,9 +148,10 @@
         private System.Windows.Forms.Label UserLbl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox UserText;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer Timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox PassText;
+        private System.Windows.Forms.Label label3;
     }
 }
 
